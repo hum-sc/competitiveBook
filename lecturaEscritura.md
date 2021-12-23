@@ -17,8 +17,7 @@ using namespace std;
 int a;
 
 int main(){
-    ios::sync_whit_stdio(0);
-    cin.tie(0);
+    ios::sync_with_stdio(0);cin.tie(0);
 
     cout << "Ingresa el numero a: \n";
     cin >> a;
@@ -26,4 +25,15 @@ int main(){
 }
 ```
 
-En estos 
+En este ejemplo, la linea ``ios::sync_with_stdio(0); cin.tie(0)`` se encarga de acelerar la lectura/escritura de datos, la  verdad, a terminos tecnicos no se que es lo que hace, pero logra igualar los tiempos de ``printf`` y ``scanf``
+
+Con ``cin >> a`` le estamos diciendo "Valmos a leer algo, y lo debemos de guardar en la variable a" debido a que la variable ``a`` de tipo entero, la entrada tambien lo será.
+
+### Lectura/Escriura con ARCHIVOS
+
+Es lo mismo que el ejempo anterior pero se le agregan las lineas 
+```cpp
+freopen("miArchivoLectura.txt", 'r', stdin);
+freopen("miArchivoEscritura.txt", 'w', stdout);
+```
+al inicio de la funcion ``main()``, notese que para leer se usa ``'r'`` (read) y para escribir ``'w'`` (write), asi como ``stdin`` para leer y ``stdout`` para escribir.
